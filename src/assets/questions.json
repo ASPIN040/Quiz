@@ -1,5 +1,5 @@
 {
-  "1": {
+  "0": {
     "question": "AFA ist die Abkürzung für...",
     "answers": {
       "1": "Angewandte für Anlagen",
@@ -8,7 +8,7 @@
     },
     "solution": "2"
   },
-  "2": {
+  "1": {
     "question": "Wieviele Abschreibungen haben wir besprochen?",
     "answers": {
       "1": "1",
