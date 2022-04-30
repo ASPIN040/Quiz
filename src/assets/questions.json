@@ -16,5 +16,33 @@
       "3": "3"
     },
     "solution": "3"
+  },
+  "2": {
+    "question": "Welche dieser Begriffe sollten Ziele eines Unternehmens sein?",
+    "answers": {
+      "1": "Intimsteigerung",
+      "2": "Konkurenzvernachlässigung",
+      "3": "Innovationsteigerung",
+      "4": "Generalüberholung"
+    },
+    "solution": "3"
+  },
+  "3": {
+    "question": "Wieviele Stufen hat die Bedürfnisspyramide nach Maslow?",
+    "answers": {
+      "1": "Drei",
+      "2": "Fünf",
+      "3": "Sieben"
+    },
+    "solution": "2"
+  },
+  "4": {
+    "question": "Was erfand Maslow?",
+    "answers": {
+      "1": "Das Rad",
+      "2": "Das Bedürfniss",
+      "3": "Die Bedürfniss-Pyramide"
+    },
+    "solution": "3"
   }
 }

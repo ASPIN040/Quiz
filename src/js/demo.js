@@ -59,42 +59,51 @@
 // 	}
 // }
 
+document.addEventListener("DOMContentLoaded", function (event) {
+
+
 // Get quiz data
-let quizData = require('../assets/questions.json');
+	let quizData = require('../assets/questions.json');
 // Get elements in #answers
-let answers = document.getElementById("answers");
+	let answers = document.getElementById("Antworten");
 // Define start button
-let startQuizBtn = document.getElementById("start_quiz");
+	let startQuizBtn = document.getElementById("start_quiz");
+	let answerQuestionBtn = document.getElementById("answer_question");
 
-const prepareQuiz = () => {
+	const prepareQuiz = () => {
 
-	let maxQuestions = Object.keys(quizData).length;
-	let current = Math.floor(Math.random() * maxQuestions);
-	let currentQuestion = quizData[current].question;
-	let allAnswers = quizData[current].answers;
-	let answerHolder = document.getElementById("Antworten");
-	let questionHolder = document.getElementById("Frage");
+		let maxQuestions = Object.keys(quizData).length;
+		let current = Math.floor(Math.random() * maxQuestions);
+		let currentQuestion = quizData[current].question;
+		let allAnswers = quizData[current].answers;
+		let answerHolder = document.getElementById("Antworten");
+		let questionHolder = document.getElementById("Frage");
 
-	questionHolder.innerHTML = '';
-	questionHolder.innerHTML = currentQuestion;
+		questionHolder.innerHTML = '';
+		questionHolder.innerHTML = currentQuestion;
 
-	answerHolder.innerHTML = '';
-	Object.entries(allAnswers).forEach(entry => {
-		const [key, value] = entry;
-		answerHolder.innerHTML += '<p>' + value + '</p>';
-	});
+		answerHolder.innerHTML = '';
+		Object.entries(allAnswers).forEach(entry => {
+			const [key, value] = entry;
+			answerHolder.innerHTML += '<p id="' + key + '">' + value + '</p>';
+		});
 
-}
+	}
+	// Start the quiz after click on start
+	startQuizBtn.addEventListener('click', prepareQuiz)
 
-startQuizBtn.addEventListener('click', prepareQuiz)
+	// Fire, if element clicked
+	const answerButton = (clickedElem) => {
+		let chosenAnswer = clickedElem.target.getAttribute('id');
+		clickedElem.target.classList.toggle('chosen')
+		console.log(clickedElem.target)
 
-// Fire, if element clicked
-const answerButton = (clickedElem) => {
-	let chosenAnswer = clickedElem.target.getAttribute('id');
-	// console.log(chosenAnswer)
-}
-// Listen on click
-answers.addEventListener('click', answerButton)
+		if (clickedElem.target.classList.contains("active")) {
+			clickedElem.target.classList.remove("active");
+		} else clickedElem.target.classList.add("active");
 
+	}
+	// Listen on click
+	answers.addEventListener('click', answerButton)
 
-// console.log(questionsFile)
+});
